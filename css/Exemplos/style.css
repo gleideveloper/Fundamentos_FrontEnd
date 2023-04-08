@@ -1,0 +1,83 @@
+div {
+    position: relative;
+}
+
+header {
+
+}
+
+li {
+    display: inline;
+    border: 1px solid black; 
+    float: left;
+    
+}
+
+span {
+    display: inline;
+    border: medium double;
+    width: 10em;
+    height: 2em;
+    margin: 3px;
+}
+
+.bloco1 {
+    background-color: rgb(239, 116, 111);
+    ;
+}
+
+.bloco2 {
+    background-color: #ecf081;
+}
+
+.bloco3 {
+    background-color: mediumseagreen;
+}
+
+.bloco4 {
+    background-color: rgb(171, 62, 91);
+}
+
+.bg_image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.fg_image {
+    position: absolute;
+    top: 35px;
+    left: 110px;
+    z-index: 2;
+}
+
+.blue {
+    width: 100px;
+    height: 200px;
+    background-color: blue;
+}
+
+.yellow {
+    width: 100px;
+    height: 150px;
+    background-color: yellow;
+    left: 100px;
+    top: -200px;
+}
+
+.red {
+    width: 100px;
+    height: 150px;
+    background-color: red;
+    left: 200px;
+    top: -350px;
+}
+
+.green {
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    top: -350px;
+    left: 100px;
+}

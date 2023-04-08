@@ -1,0 +1,18 @@
+h1,
+h2 {
+    color: red;
+}
+
+h1 {
+    margin-left: 2cm
+}
+
+h2 {
+    margin-left: 4cm
+}
+
+p {
+    text-indent: 2cm;
+    color: darkred;
+    margin-left: 6cm
+}

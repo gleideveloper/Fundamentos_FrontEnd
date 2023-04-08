@@ -1,0 +1,47 @@
+
+h1.artista {
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: 600;
+    color: moccasin;
+}
+h2.musica {
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: khaki;
+}
+h2.album {
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: normal;
+    color: khaki;
+}
+h2.ano {
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    color: ivory;
+}
+.estrofe {
+    font-size: 14pt;
+    font-family: "trebuchet ms";
+    font-weight: bold;
+    color: gold;
+    margin-left: 2cm;
+    margin-right: 2cm;
+  }
+ .refrao {
+    font-size: 14pt;
+    font-family: "trebuchet ms";
+    font-weight: bold;
+    font-style: italic;
+    color: gold;
+    margin: 0 0 1em 4cm;
+  }
+  p.refrao{
+    margin-left: 2cm
+  }
+body {
+    background-color: chocolate;    
+}

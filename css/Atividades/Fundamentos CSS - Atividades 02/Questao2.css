@@ -1,0 +1,39 @@
+/* Cor da letra */
+body {
+    color: gold;
+}
+
+/* Cor de fundo da tabela */
+table {
+    background-color: chocolate;
+}
+
+/* Estilo de borda da tabela */
+table {
+    border-style: inset;
+    border-width: 10px;
+    border-color: Khaki;
+}
+
+/* Título da tabela */
+th {
+    width: 500px;
+    font-size: 20pt;
+    font-weight: normal;
+    border-bottom: 1px solid gold;
+}
+
+/* Produtos e preços */
+td {
+    font-size: 14pt;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Letra capitular */
+span.fruta {
+    font-size: 32pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gold;
+    font-weight: bold;
+}
