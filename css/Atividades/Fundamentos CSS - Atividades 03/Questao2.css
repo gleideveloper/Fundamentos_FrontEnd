@@ -1,0 +1,39 @@
+/* CSS inicial */
+.header {
+    font-family: monospace;
+    background: #0B6D1E;
+    display: flex;
+    padding: 8px 8px 8px 8px;
+    align-items: center; 
+    justify-content: space-between;
+}
+.left-links {
+    margin-left: -40px;
+}
+.right-links {
+    margin-right: 0px;
+} 
+.logo {
+    font-size: 48px;
+    font-weight: 900;
+    color: thistle;
+    background: white;
+    padding: 4px 32px;
+    margin-left: 40px;
+    
+}
+
+ul {
+    /* remove os pontos da lista de items*/
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+}
+
+a {
+    font-size: 22px;
+    background: white;
+    padding: 8px;
+    /* remove o sublinhado dos links */
+    text-decoration: none;
+}
