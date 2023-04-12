@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Uma pagina Web</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Gleides Vinente">
+    <script>
+        function sum(op) {
+            console.log("soma");
+            var numX = parseInt(document.getElementById("x").value);
+            var numY = parseInt(document.getElementById("y").value);
+            var total = numX + numY
+            document.getElementById("op").innerHTML = " + ";
+            document.getElementById("result").innerHTML = "= Resultado: " + total;
+        }
+        function sub(op) {
+            var numX = parseInt(document.getElementById("x").value);
+            var numY = parseInt(document.getElementById("y").value);
+            var total = numX - numY
+            document.getElementById("op").innerHTML = " - ";
+            document.getElementById("result").innerHTML = "= Resultado: " + total;
+        }
+        function div(op) {
+            var numX = parseInt(document.getElementById("x").value);
+            var numY = parseInt(document.getElementById("y").value);
+            var total = numX / numY
+            document.getElementById("op").innerHTML = " / ";
+            document.getElementById("result").innerHTML = "= Resultado: " + total;
+        }
+        function mult(op) {
+            var numX = parseInt(document.getElementById("x").value);
+            var numY = parseInt(document.getElementById("y").value);
+            var total = numX * numY
+            document.getElementById("op").innerHTML = " * ";
+            document.getElementById("result").innerHTML = "= Resultado: " + total;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <div style="display: flex;">
+            <div>
+                <label>Valor1</label>
+                <br>
+                <input type="number" id="x" value="0">
+                <label id="op" style="margin: 10px;">Operacao</label>
+            </div>
+            <div>
+                <label>Valor2</label>
+                <br>
+                <input type="number" id="y" value="0">
+                <label id="result">= Resultado</label>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div style="display: flex; gap: 50px;">
+            <button type="button" onclick="sum()"> + </button>
+            <button type="button" onclick="sub()"> - </button>
+            <button type="button" onclick="div()"> / </button>
+            <button type="button" onclick="mult()"> * </button>
+        </div>
+    </form>
+
+</body>
+
+</html>

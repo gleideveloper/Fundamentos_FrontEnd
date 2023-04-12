@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Uma pagina Web</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Gleides Vinente">
+    <script>
+        function tabuada() {
+            const numero = parseInt(document.getElementById("vlr").value);
+
+            const tabuada = Array.from(
+                { length: 10 },
+                (_, i) => {
+                    const resultado = (i + 1) * numero;
+                    return `${numero} x ${i + 1} = ${resultado}`;
+                }
+            );
+
+            console.log(tabuada.join("\n"));
+
+        }
+        function printTabuada(){
+            document.getElementById("tab1").innerHTML = tabuada.join("\n");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <label>Digite o número da tabuada: </label>
+        <br>
+        <input type="text" id="vlr">
+    </div>
+    <button type="button" onclick="printTabuada()"> Calcular </button>
+    <div>
+        <label id="tab1"></label>
+        <label id="2"></label>
+        <label id="3"></label>
+        <label id="4"></label>
+        <label id="5"></label>
+        <label id="6"></label>
+        <label id="7"></label>
+        <label id="8"></label>
+        <label id="9"></label>
+        <label id="10"></label>
+
+    </div>
+</body>
+
+</html>
