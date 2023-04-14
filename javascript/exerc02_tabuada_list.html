@@ -9,31 +9,25 @@
     <meta name="autor" content="Gleides Vinente">
     <script>
         function setColor() {
-            return randomColor = 'rgba(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',1.0)';
+            let randomColor = 'rgba(' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',' + Math.floor(Math.random() * 256) + ',1.0)';
+            return randomColor;
         }
-        
-        function exibirTabuadas() {
+        function exibirTabuada() {
             const numero = parseInt(document.getElementById("numero").value);
             const tabela = document.getElementById("tabela");
-            tabela.innerHTML = ""; // limpa a tabela antes de exibir as novas tabuadas
-            
+
+            tabela.innerHTML = ""; // limpa a tabela antes de exibir a nova tabuada
             for (let i = 1; i <= numero; i++) {
-                let tabuada = Array.from({ length: 10 }, (_, j) => {
-                    const resultado = (j + 1) * i;
-                    return `<td  id='item'>${i} x ${j + 1} = ${resultado}</td>`;
-                });
-                let tbody = `<tbody style="background-color: ${setColor()};">
-                                <tr>
-                                    <td id="title" style="color: ${setColor()};">${i}</td>
-                                </tr>
-                                <tr>
-                                    ${tabuada.join("</td>")}
-                                </tr>
-                            </tbody>`;
-                tabela.innerHTML += tbody;
+                var tabuada = [];
+                for (let j = 0; j < 10; j++) {
+                    let resultado = i * (j + 1);
+                    tabuada[j] = `${i} x ${j + 1} = ${resultado}`;
+                }
+
+                // let linha = `<tr><td id="title">${i}</td></tr><tr><td>${tabuada.join("</td><td  id='item'>")}</td></tr>`;
+                let linha = `<tbody style="background-color: ${setColor()};"><tr><td id="title" style="color: ${setColor()};">${i}</td></tr><tr><td>${tabuada.join("</td><td  id='item'>")}</td></tr></tbody>`;
+                tabela.innerHTML += linha;
             }
-            console.log('minha tabela')
-            console.log(tabela);
             document.tabela.document.document.t
         }
     </script>
@@ -48,12 +42,10 @@
             margin-left: 8px;
         }
 
-        td#title{
+        td#title:last-child {
             color: rgb(42, 86, 206);
             font-size: 80px;
             text-align: center;
-            background-color: transparent;
-            text-shadow: 4px 4px 0px #000, -4px 0 0px #000, 7px 4px 0 #fff;
         }
 
         td#item:last-child {
@@ -76,6 +68,7 @@
             border-style: solid;
             border-color: black;
             border-radius: 26px;
+            background-color: brown;
             align-content: center;
         }
     </style>
@@ -85,7 +78,7 @@
 <body>
     <label for="numero">Digite um número:</label>
     <input type="text" id="numero" name="numero">
-    <button onclick="exibirTabuadas()">Exibir Tabuadas</button>
+    <button onclick="exibirTabuada()">Exibir Tabuada</button>
 
     <table id="tabela"></table>
 </body>
