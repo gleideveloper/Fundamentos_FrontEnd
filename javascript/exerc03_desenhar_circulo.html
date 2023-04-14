@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gleides Vinente">
+    <title>Exercicio 03 Círculo</title>
+
+    <script>
+
+        // Função para calcular e exibir os resultados
+        function calcular() {
+            // Obtendo os valores do formulário
+            var raio = document.getElementById("raio").value;
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+
+            // Atualizando o objeto círculo com o raio informado
+            circulo.raio = raio;
+
+            // Exibindo os resultados
+            document.getElementById("area").textContent = circulo.area();
+            document.getElementById("circunferencia").textContent = circulo.circunferencia();
+            document.getElementById("posicao").textContent = circulo.posicaoPonto(x, y);
+
+            // Desenhando o círculo
+            circulo.desenharCirculo();
+        }
+
+        // Definindo o objeto círculo
+        var circulo = {
+            raio: 0,
+
+            area: function () {
+                return Math.PI * Math.pow(this.raio, 2);
+            },
+
+            circunferencia: function () {
+                return 2 * Math.PI * this.raio;
+            },
+
+            posicaoPonto: function (x, y) {
+                var distancia = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+                if (distancia < this.raio) {
+                    return "dentro";
+                } else if (distancia == this.raio) {
+                    return "na circunferência";
+                } else {
+                    return "fora";
+                }
+            },
+
+            desenharCirculo: function () {
+                // Obtendo o canvas e o contexto de desenho
+                const canvas = document.getElementById("myCanvas");
+                var ctx = canvas.getContext("2d");
+
+                // Limpando o canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Desenhando o círculo
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, this.raio, 0, 2 * Math.PI);
+                ctx.stroke();
+
+            }
+        };
+
+    </script>
+    <style>
+        #myCanvas {
+            width: 100%;
+            text-align: left;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            text-align: right;
+        }
+
+        #title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <label id="title">********** INFORMA OS DADOS **********</label>
+    <div>
+        <form>
+            <label for="raio">Raio do círculo:</label>
+            <input type="number" id="raio">
+            <br>
+            <label for="x">Coordenada X do ponto:</label>
+            <input type="number" id="x">
+            <br>
+            <label for="y">Coordenada Y do ponto:</label>
+            <input type="number" id="y">
+            <br>
+            <br>
+        </form>
+    </div>
+    <button type="button" onclick="calcular()">Calcular</button>
+    <p>Área: <span id="area"></span></p>
+    <p>Circunferência: <span id="circunferencia"></span></p>
+    <p>O ponto está <span id="posicao"></span> do círculo.</p>
+
+    <canvas id="myCanvas"></canvas>
+</body>
+
+</html>
