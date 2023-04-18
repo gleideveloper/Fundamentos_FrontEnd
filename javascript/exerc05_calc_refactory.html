@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Gleides Vinente">
+    <title>Calc Refactory Code</title>
+    <script>
+        function calc() {
+            result.op = parseInt(event.srcElement.id);
+            var total = result.operation(
+                parseInt(document.getElementById("x").value),
+                parseInt(document.getElementById("y").value)
+            );
+            document.getElementById("sinal").innerHTML = result.sinal;
+            document.getElementById("result").innerHTML = "Resultado = " + total;
+            console.log(total);
+        }
+        var result = {
+            op: 0,
+            sinal: "operação",
+            operation: (x, y) => {
+                res = 0;
+                switch (result.op) {
+                    case 1:
+                        res = x + y;
+                        result.sinal = " + "
+                        break;
+                    case 2:
+                        res = x - y;
+                        result.sinal = " - "
+                        break;
+                    case 3:
+                        res = x / y;
+                        result.sinal = " / "
+                        break;
+                    case 4:
+                        res = x * y;
+                        result.sinal = " * "
+                        break;
+                }
+                return res;
+            }
+        }
+    </script>
+    <style>
+        .box-title .title {
+
+            position: relative;
+            text-align: center;
+            font-size: 35px;
+            text-transform: uppercase;
+            color: #358941;
+            letter-spacing: 1px;
+            font-family: 'open_sansregular';
+
+        }
+
+        .box-title .title .subtitle {
+
+            margin-top: 5px;
+            font-size: 15px;
+            color: #4c4c4c;
+            word-spacing: 1px;
+            font-weight: bold;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            font-family: 'open_sansregular';
+            font-weight: 500;
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-template-rows: 27px 0;
+            grid-gap: 20px;
+            align-items: center;
+
+        }
+
+        .box-title .title .subtitle:after,
+        .box-title .title .subtitle:before {
+
+            content: " ";
+            display: block;
+            border-bottom: 1px solid #7aa680;
+            border-top: 1px solid #7aa680;
+            height: 6px;
+            background-color: transparent;
+
+        }
+
+        .box-formulario {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #bad5be;
+            padding: 60px 0;
+
+        }
+
+        .formulario {
+            width: 700px;
+            background: #bad5be;
+            padding: 60px 5%;
+            text-align: center;
+
+        }
+
+
+        .formulario span {
+            position: relative;
+            display: flex;
+            margin: 45px 10px;
+
+        }
+
+        .items-form {
+            display: flex;
+            align-items: center;
+        }
+
+        /*input Animado*/
+        .input-hidden {
+            width: 100%;
+            padding: 10px 10px 13px 60px;
+            font-family: "Open Sans", sans;
+            font-weight: 400;
+            color: #232323;
+            background: #ffffff;
+            border: 0;
+            border-radius: 50px;
+            outline: 0;
+            transition: all .3s ease-in-out;
+
+        }
+
+        /* Labels */
+        #sinal,
+        #result {
+            padding: 10px;
+            font-family: 'Arial Narrow Bold';
+            font-weight: 900;
+            color: #ffffff;
+            background: #66a37e;
+            border-radius: 50px;
+        }
+
+
+        /*Botão*/
+        .box-btn {
+            width: 100%;
+            padding: 10px;
+            float: left;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-submit {
+
+            color: #fff;
+            background: #43a351;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            transition: 0.5s;
+            width: 100%;
+            padding: 0.5em 1em;
+            font-size: 1.3em;
+            font-weight: bold;
+            float: left;
+
+        }
+
+        .btn-submit:hover {
+            background-color: #4c4c4c;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box-formulario">
+        <div class="formulario">
+            <div class="box-title">
+                <h1 class="title">Calc Refactory Code<span class="subtitle">By Gleides Vinente</span></h1>
+            </div>
+            <form>
+                <div class="items-form">
+                    <span>
+                        <input type="text" class="input-hidden" id="x" placeholder="Informe o valor de X: "
+                            autocomplete="off" />
+                    </span>
+                    <label type="text" id="sinal"> Operacao</label>
+                    <span>
+                        <input type="text" class="input-hidden" id="y" placeholder="Informe o valor de Y: "
+                            autocomplete="off" />
+                    </span>
+                    <span>
+                        <label type="text" id="result"> = </label>
+                    </span>
+                </div>
+                <div class="box-btn">
+                    <button class="btn-submit" id="1" type="button" onclick="calc(this.id)"> + </button>
+                    <button class="btn-submit" id="2" type="button" onclick="calc(this.id)"> - </button>
+                    <button class="btn-submit" id="3" type="button" onclick="calc(this.id)"> / </button>
+                    <button class="btn-submit" id="4" type="button" onclick="calc(this.id)"> * </button>
+                </div>
+            </form>
+        </div>
+    </div><!--Box Formulario-->
+</body>
+
+</html>
