@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list_1">
+        <li>Café</li>
+        <li>Chá</li>
+    </ul>
+    <ul id="list_2">
+        <li>Água</li>
+        <li>Leite</li>
+        <li>Suco</li>
+    </ul>
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+    <button onclick="change()">Trocar</button>
+    <button onclick="addToList()">InsertAdjacentHTML</button>
+    <script>
+        function change() {
+            let node = document.getElementById("list_2").firstElementChild;
+            let list_1 = document.getElementById("list_1");
+            list_1.insertBefore(node, null);
+        }
+        function addToList() {
+            let node = document.getElementById("list").firstElementChild;
+            list.insertAdjacentHTML('beforebegin', '<h2>Web Academy</h2>');
+            list.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+            list.insertAdjacentHTML('beforeend', '<li>JavaScript</li>');
+            list.insertAdjacentHTML('afterend', '<p>Formação Front-End</p>');
+
+        }
+    </script>
+</body>
+
+</html>
