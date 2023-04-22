@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="autor" content="Gleides Vinente" />
-      <title>Questão 5</title>
-   </head>
-   <body>
-      <h1>Sobre Mim</h1>
+  <!-- prettier-ignore -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Gleides Vinente">
+    <title>Questão 5</title>
+  </head>
+  <body>
+    <h1>Sobre Mim</h1>
+    <ul>
+      <li>
+        Nome Completo:
+        <span id="fullname"></span>
+      </li>
+      <li>
+        Idade:
+        <span id="age"></span>
+      </li>
+      <li>
+        Cidade Natal:
+        <span id="hometown"></span>
+      </li>
+    </ul>
 
-      <ul>
-         <li>Nome Completo: <span id="fullname"></span></li>
-         <li>Idade: <span id="age"></span></li>
-         <li>Cidade Natal: <span id="hometown"></span></li>
-      </ul>
+    <script>
+      // a. Mude o estilo CSS font-family do elemento <body> para “Arial”
+      document.body.style.fontFamily = "Arial";
 
-      <script>
-         // a. Mude o estilo CSS font-family do elemento <body> para “Arial”
-         document.body.style.fontFamily = "Arial";
+      // b. Troque cada um dos elementos <span> por informações fictícias
+      document.getElementById("fullname").textContent = "João da Silva";
+      document.getElementById("age").textContent = "28 anos";
+      document.getElementById("hometown").textContent = "São Paulo";
 
-         // b. Troque cada um dos elementos <span> por informações fictícias
-         document.getElementById("fullname").textContent = "João da Silva";
-         document.getElementById("age").textContent = "28 anos";
-         document.getElementById("hometown").textContent = "São Paulo";
+      // c. Adicione uma tag <style> .listItem { color: red; } </style> no <head>
+      const style = document.createElement("style");
+      style.innerHTML = ".listItem { color: red; }";
+      document.head.appendChild(style);
 
-         // c. Adicione uma tag <style> .listItem { color: red; } </style> no <head>
-         const style = document.createElement("style");
-         style.innerHTML = ".listItem { color: red; }";
-         document.head.appendChild(style);
-
-         // d. Via Javascript adicione a classe ‘listItem’ nos elementos <li>
-         const lis = document.querySelectorAll("li");
-         lis.forEach((li) => li.classList.add("listItem"));
-      </script>
-   </body>
+      // d. Via Javascript adicione a classe ‘listItem’ nos elementos <li>
+      const lis = document.querySelectorAll("li");
+      lis.forEach((li) => li.classList.add("listItem"));
+    </script>
+  </body>
 </html>
