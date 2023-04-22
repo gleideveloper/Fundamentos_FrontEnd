@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="autor" content="Gleides Vinente" />
+      <title>Questão 4</title>
+   </head>
+   <body>
+      <div class="estufa">
+         <ul class="frutas">
+            <li>Abacate</li>
+            <li>Banana</li>
+            <li>Caqui</li>
+            <li>Laranja</li>
+            <li>Melão</li>
+         </ul>
+         <ul class="verduras">
+            <li>Aipo</li>
+            <li>Alface</li>
+            <li>Brócolis</li>
+            <li>Couve</li>
+            <li>Espinafre</li>
+         </ul>
+         <ul class="Legumes">
+            <li>Abóbora</li>
+            <li>Batata</li>
+            <li>Cenoura</li>
+            <li>Mandioca</li>
+         </ul>
+         <ul class="flores">
+            <li>Acácia</li>
+            <li>Flor de Lótus</li>
+            <li>Rosa Branca</li>
+         </ul>
+      </div>
+      <script>
+         // Questão 4 -> a:
+         const divEstufa = document.querySelector(".estufa");
+         console.log(divEstufa);
+         // Questão 4 -> b:
+         const ulVerduras = divEstufa.querySelector(".verduras");
+         console.log(ulVerduras);
+         // Questão 4 -> c:
+         const liVerduras = document.querySelectorAll(".verduras li");
+         console.log(liVerduras);
+         // Questão 4 -> d:
+         const ulFrutas = divEstufa.querySelector(".frutas");
+         const filhosFrutas = ulFrutas.children;
+         Array.from(filhosFrutas).forEach((e) => {
+            console.log(e.textContent);
+         });
+         // Questão 4 -> e:
+         const caqui = ulFrutas.children[2];
+         console.log(caqui.textContent);
+         // Questão 4 -> f:
+         const liAcacia = document.querySelector(".flores li:first-child");
+         const ulFlores = liAcacia.parentNode;
+         console.log(ulFlores);
+         // Questão 4 -> g:
+         const liRosaBranca = document.querySelector(".flores li:last-child");
+         const ulEstufa = liRosaBranca.parentNode.parentNode;
+         console.log(ulEstufa);
+         // Questão 4 -> h:
+         const liBatata = document.querySelectorAll(".Legumes li")[1];
+         const liCenoura = liBatata.nextElementSibling;
+         console.log(liCenoura.textContent);
+         // Questão 4 -> i:
+         const liAbobora = liBatata.previousElementSibling;
+         console.log(liAbobora.textContent);
+         // Questão 4 -> j:
+         const liMandioca = liBatata.nextElementSibling.nextElementSibling;
+         console.log(liMandioca.textContent);
+      </script>
+   </body>
+</html>

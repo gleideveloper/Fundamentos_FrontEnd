@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="autor" content="Gleides Vinente" />
-    <title>Questão 2</title>
-    <style>
-      /* CSS questão 2 */
-      p {
-        width: 350px;
-        padding: 20px;
-        background: papayawhip;
-      }
-    </style>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="autor" content="Gleides Vinente" />
+        <title>Questão 2</title>
+        <style>
+            /* CSS questão 2 */
+            p {
+                width: 350px;
+                padding: 20px;
+                background: papayawhip;
+            }
+        </style>
+    </head>
 
-  <body>
-    <p>
-      Mary Kenneth Keller foi uma freira e também a primeira mulher a conquistar
-      um doutorado em Ciências da Computação.
-    </p>
-    <p>
-      A britânica Ada Lovelace foi a primeira programadora da história, criando
-      o primeiro algoritmo capaz de ser processado por uma máquina.
-    </p>
-    <p>
-      Grace Hopper é que foi por causa dela que começamos a chamar as falhas de
-      “bug”.
-    </p>
-    <p>
-      A Carol Shaw foi a primeira mulher a desbravar o universo dos games, na
-      década de 70.
-    </p>
+    <body>
+        <p>
+            Mary Kenneth Keller foi uma freira e também a primeira mulher a
+            conquistar um doutorado em Ciências da Computação.
+        </p>
+        <p>
+            A britânica Ada Lovelace foi a primeira programadora da história,
+            criando o primeiro algoritmo capaz de ser processado por uma
+            máquina.
+        </p>
+        <p>
+            Grace Hopper é que foi por causa dela que começamos a chamar as
+            falhas de “bug”.
+        </p>
+        <p>
+            A Carol Shaw foi a primeira mulher a desbravar o universo dos games,
+            na década de 70.
+        </p>
 
-    <script>
-      // Questão 2 -> a:
-      // Obtém o primeiro parágrafo usando querySelector()
-      let firstParagraph = document.querySelector("p");
-      console.log(firstParagraph);
-      // Obtém o primeiro parágrafo usansdo getElementByTagName()
-      let paragraphs = document.getElementsByTagName("p");
-      let firstParagraphByTagName = paragraphs[0];
-      console.log(firstParagraphByTagName);
+        <script>
+            // Questão 2 -> a:
+            // Obtém o primeiro parágrafo usando querySelector()
+            let firstParagraph = document.querySelector("p");
+            console.log(firstParagraph);
+            // Obtém o primeiro parágrafo usansdo getElementByTagName()
+            let paragraphs = document.getElementsByTagName("p");
+            let firstParagraphByTagName = paragraphs[0];
+            console.log(firstParagraphByTagName);
 
-      // Questão 2 -> b:
-      // Percorre a NodeList dos parágrafos e obtém o conteúdo de texto de cada um deles
-      for (var i = 0; i < paragraphs.length; i++) {
-        var paragraph = paragraphs[i].textContent;
-        console.log(paragraph);
-      }
+            // Questão 2 -> b:
+            // Percorre a NodeList dos parágrafos e obtém o conteúdo de texto de cada um deles
+            for (var i = 0; i < paragraphs.length; i++) {
+                var paragraph = paragraphs[i].textContent;
+                console.log(paragraph);
+            }
 
-      // Questão 2 -> c:
-      // Obtém o penúltimo parágrafo
-      let lastParagraph = paragraphs[paragraphs.length - 2];
-      lastParagraph.style.backgroundColor = "blue";
-      console.log(lastParagraph);
+            // Questão 2 -> c:
+            // Obtém o penúltimo parágrafo
+            let lastParagraph = paragraphs[paragraphs.length - 2];
+            lastParagraph.style.backgroundColor = "blue";
+            console.log(lastParagraph);
 
-      // Questão 2 -> d:
-      // cria um array de IDs
-      const ids = ["one", "two", "tree", "four"];
-      // seleciona todos os elementos p na página e itera sobre cada parágrafo na NodeList
-      for (let i = 0; i < paragraphs.length; i++) {
-        // define o ID usando o array de IDs
-        paragraphs[i].id = ids[i];
-        // adiciona a classe "paragraph" usando o método classList.add
-        paragraphs[i].classList.add("paragraph");
-      }
+            // Questão 2 -> d:
+            // cria um array de IDs
+            const ids = ["one", "two", "tree", "four"];
+            // seleciona todos os elementos p na página e itera sobre cada parágrafo na NodeList
+            for (let i = 0; i < paragraphs.length; i++) {
+                // define o ID usando o array de IDs
+                paragraphs[i].id = ids[i];
+                // adiciona a classe "paragraph" usando o método classList.add
+                paragraphs[i].classList.add("paragraph");
+            }
 
-      // Questão 2 -> e:
-      // itera sobre cada parágrafo na NodeList
-      Array.from(paragraphs).forEach((element) => {
-        element.style.fontFamily = "Monospace";
-        element.style.fontSize = "14pt";
-        element.style.border = "8px solid pink";
-      });
-    </script>
-  </body>
+            // Questão 2 -> e:
+            // itera sobre cada parágrafo na NodeList
+            Array.from(paragraphs).forEach((element) => {
+                element.style.fontFamily = "Monospace";
+                element.style.fontSize = "14pt";
+                element.style.border = "8px solid pink";
+            });
+        </script>
+    </body>
 </html>

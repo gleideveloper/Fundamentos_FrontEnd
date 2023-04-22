@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="autor" content="Gleides Vinente" />
+        <title>Questão 3</title>
+        <style>
+            /* CSS questão 3 */
+            body {
+                font-family: "Helvetica", "Arial", sans-serif;
+                background-color: #fff;
+                color: #000;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            table {
+                margin: auto;
+                border: 1px solid #699;
+            }
+
+            th {
+                font-weight: normal;
+                font-style: italic;
+                text-align: left;
+                border: 1px dotted #699;
+                background-color: #9cc;
+                color: #000;
+                width: 10em;
+                padding: 0.5em;
+            }
+
+            td {
+                width: 15em;
+                padding: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <h1>Intinerário</h1>
+            <thead>
+                <tr>
+                    <th>Quando?</th>
+                    <th>Para Onde?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>18 de Abril</td>
+                    <td>Salvador <abbr title="Bahia">SSA</abbr></td>
+                </tr>
+                <tr>
+                    <td>20 de Abril</td>
+                    <td>
+                        Porto de Galinhas <abbr title="Pernambuco">PE</abbr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>23 de Abril</td>
+                    <td>Manaus <abbr title="Amazonas">MAO</abbr></td>
+                </tr>
+                <tr>
+                    <td>28 de Abril</td>
+                    <td>
+                        Presidente Figueiredo <abbr title="Amazonas">PF</abbr>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            // Questão 3 -> a:
+            let tables = document.getElementsByTagName("table"); //nó pai
+            Array.from(tables).forEach((e) => {
+                let rows = e.getElementsByTagName("tr");
+                for (let i = 0; i < rows.length; i++) {
+                    if (i % 2 === 1) {
+                        //verifica se é linha par
+                        rows[i].style.backgroundColor = "#ffc"; //altera a cor de fundo para #ffc
+                    }
+                }
+            });
+            // Questão 3 -> b:
+            let titleElements = document.querySelectorAll("th");
+            titleElements[0].textContent = "Dia";
+            titleElements[1].textContent = "Local";
+        </script>
+    </body>
+</html>
