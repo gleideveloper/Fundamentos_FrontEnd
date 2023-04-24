@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <meta name="autor" content="Gleides Vinente">
-  <title>Questão 2</title>
+  <title>Questão 1: Javascript + DOM</title>
   <style>
     /* CSS Questao 1 */
     .container {
@@ -31,7 +30,56 @@
 </head>
 
 <body>
+  <div class="container">
+    <div id="divA" class="cell">A</div>
+    <div id="divB" class="cell">B</div>
+    <div id="divC" class="cell">C</div>
+    <div id="divD" class="cell">D</div>
+  </div>
 
+  <script>
+    // Questão 1 -> a:
+    let divD = document.getElementById("divD");
+
+    divD.addEventListener("click", function (event) {
+      let currentColor = event.target.style.backgroundColor;
+
+      if (currentColor === "rgb(192, 192, 192)") {
+        event.target.style.backgroundColor = "rgb(218, 165, 32)";
+      } else {
+        event.target.style.backgroundColor = "rgb(192, 192, 192)";
+      }
+    });
+
+    // *************** ATENÇÃO PROFESSOR ***************
+    // itens b e c: estão dando conflito nos eventos do mouse
+    // causa do conflito: são aplicados na mesma div C.
+    // solução:
+    // item b -> evento aplicado na div B
+    // item c -> evento aplicado na div C
+
+    // Questão 1 -> b:
+    let divB = document.getElementById("divB");
+    let colors = ["Blue", "#00FF00", "#FF4500", "rgb(255, 215, 0)", "rgb(211, 211, 211)"];
+    let currentIndex = 0;
+
+    divB.addEventListener("mouseover", function (event) {
+      let currentColor = colors[currentIndex];
+      event.target.style.backgroundColor = currentColor;
+      currentIndex = (currentIndex + 1) % colors.length;
+    });
+
+    // Questão 1 -> c:
+    const divC = document.getElementById("divC");
+    divC.addEventListener("mouseenter", function (event) {
+      event.target.style.backgroundColor = "red";
+    });
+
+    divC.addEventListener("mouseleave", function (event) {
+      event.target.style.backgroundColor = "green";
+    });
+
+  </script>
 </body>
 
 </html>
