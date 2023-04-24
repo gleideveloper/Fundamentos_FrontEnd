@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Gleides Vinente">
+  <title>Questão 3: Javascript + DOM</title>
+
+  <style>
+    .body-data {
+      border: #3CB371 2px solid;
+      background-color: #03a9f400;
+      text-align: left;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      height: auto;
+      width: auto;
+    }
+
+    .resultText {
+      margin: 0 0 3px 0;
+      padding: 0px;
+      display: block;
+      font-weight: bold;
+    }
+
+    .heading {
+      font-weight: bold;
+      border-bottom: 2px solid #708090;
+      font-size: 15px;
+      width: 98%;
+    }
+  </style>
+
+<body>
+  <div class="body-data">
+    <div class="heading">
+      <h2> Evendo com 'blur' </h2>
+      <span>Click no input para disparar o Evento </span>
+    </div>
+    <div class="resultText">
+      </br>
+      <p> Campo de Validação </p>
+      <textarea id="myText" rows="4" cols="50"></textarea>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    // Selecionar o textarea
+    const myText = document.getElementById("myText");
+
+    // Adicionar o evento 'blur'
+    myText.addEventListener("blur", function () {
+      // Obter o valor do textarea
+      const textValue = myText.value;
+
+      // Verificar se o valor contém números
+      const containsNumbers = /\d/.test(textValue);
+
+      // Atualizar o background do textarea com base no resultado da verificação
+      if (containsNumbers) {
+        myText.style.background = "red";
+      } else {
+        myText.style.background = "green";
+      }
+
+      // Escrever o feedback no elemento com id 'result'
+      const result = document.getElementById("result");
+      if (textValue === "") {
+        result.innerText = "Input está vazio";
+      } else if (containsNumbers) {
+        result.innerText = "Input contém números";
+      } else {
+        result.innerText = "Input não contém números";
+      }
+    });
+
+    // Adicionar o evento que impede que o usuário use o CTRL+V
+    myText.addEventListener("keydown", function (event) {
+      if (event.ctrlKey && (event.key === "v" || event.key === "V")) {
+        event.preventDefault();
+      }
+    });
+
+  </script>
+</body>
+
+</html>

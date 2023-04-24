@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Gleides Vinente">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme:300|Monoton" rel="stylesheet">
+  <title>Questão 4: Javascript + DOM</title>
+
+  <style>
+    html,
+    body {
+      margin: auto 0;
+      font-size: 18px;
+      font-family: 'BioRhyme', serif;
+    }
+
+    body {
+      background-size: cover;
+      display: grid;
+      justify-items: center;
+    }
+
+    .header {
+      display: inline-flex;
+    }
+
+    h1 {
+      padding: 0 1.5rem;
+      font-family: 'Arial', cursive;
+      letter-spacing: 3px;
+      font-weight: 300;
+      font-size: 2.8em;
+    }
+
+    #first {
+      display: flex;
+      align-self: baseline;
+    }
+
+    .list {
+      background: #FFDAB9;
+      padding: 2rem;
+      width: 30vw;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .list--header {
+      align-self: center;
+      padding-top: 1rem;
+    }
+
+    #userinput,
+    #enter {
+      padding: .5rem;
+      font-size: .8em;
+      border-radius: 5%;
+    }
+
+    ul {
+      text-align: right;
+      list-style-type: none;
+    }
+
+    li {
+      padding-top: .5rem;
+      cursor: pointer;
+    }
+
+    button {
+      margin-left: 1rem;
+      margin-bottom: .5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: .5rem .3rem;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+
+    .done {
+      text-decoration: line-through;
+    }
+  </style>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Lista da Festa</h1>
+    </div>
+    <div class="list">
+      <div class="list--header">
+        <input id="userinput" type="text" placeholder="...">
+        <button id="enter">Enter!</button>
+      </div>
+      <ul id="item--List">
+        <li>
+          <span>Chocolate</span>
+          <button class="delete--button">Delete</button>
+        </li>
+        <li><span>Balões</span>
+          <button class="delete--button">Delete</button>
+        </li>
+        <li>
+          <span>Cupcake</span>
+          <button class="delete--button">Delete</button>
+        </li>
+        <li>
+          <span>Bolo de Aniversário</span>
+          <button class="delete--button">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Questão 4 => item a:
+    const deleteButtons = document.querySelectorAll('.delete--button');
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.parentNode.remove();
+      });
+    });
+    // Questão 4 => item b:
+    const userInput = document.getElementById('userinput');
+    const enterBtn = document.getElementById('enter');
+    const itemList = document.getElementById('item--List');
+    enterBtn.addEventListener('click', () => {
+      const newItemText = userInput.value.trim();
+      if (newItemText !== '') {
+        const newItem = document.createElement('li');
+        const newItemSpan = document.createElement('span');
+        newItemSpan.textContent = newItemText;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete--button');
+        newItem.appendChild(newItemSpan);
+        newItem.appendChild(deleteButton);
+        itemList.appendChild(newItem);
+        deleteButton.addEventListener('click', () => {
+          newItem.remove();
+        });
+        userInput.value = '';
+      }
+    });
+    // Questão 4 => item c:
+    const listItems = document.querySelectorAll('li');
+    listItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('done');
+      });
+    });
+    // Questão 4 => item d:
+    userInput.addEventListener('keydown', event => {
+      const newItemText = userInput.value.trim();
+      if (event.key === 'Enter' && newItemText !== '') {
+        const newItem = document.createElement('li');
+        const newItemSpan = document.createElement('span');
+        newItemSpan.textContent = newItemText;
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete--button');
+        newItem.appendChild(newItemSpan);
+        newItem.appendChild(deleteButton);
+        itemList.appendChild(newItem);
+        deleteButton.addEventListener('click', () => {
+          newItem.remove();
+        });
+        userInput.value = '';
+      }
+    });
+    // Questão 4 => item d:
+    userInput.addEventListener('blur', () => {
+      if (/\d/.test(userInput.value)) {
+        alert('Não é permitido adicionar números na lista.');
+        userInput.value = '';
+      }
+    });
+
+  </script>
+</body>
+
+</html>

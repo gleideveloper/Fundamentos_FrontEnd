@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Gleides Vinente">
+  <title>Questão 5: Javascript + DOM</title>
+
+  <style>
+    .btn,
+    .remove-btn {
+      text-transform: capitalize;
+      width: 100px;
+      height: 10px;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    img {
+      transition: display .2ms ease;
+      cursor: pointer;
+    }
+
+    .js-hidden {
+      display: none;
+    }
+
+    .js-show {
+      display: block;
+    }
+  </style>
+
+<body>
+  <span class='btn'>Visualizar Imagem</span>
+  <img id="myImg" class="js-hidden" src="https://www.crocoder.dev/assets/dom.8cd47d32.webp" alt="Imagem" />
+
+  <script>
+    // Questão 5 => item a:
+    // Obtém as referências aos elementos e add evento par exibir a imagem
+    const btn = document.querySelector('.btn');
+    const myImg = document.getElementById('myImg');
+    myImg.style.margin = "10px";
+    btn.addEventListener('click', () => {
+      myImg.classList.add('js-show');
+      myImg.classList.remove('js-hidden');
+    });
+    // Questão 5 => item b:
+    // Configura a imagem para esconder-se quando clicada
+    myImg.addEventListener('click', () => {
+      myImg.classList.remove('js-show');
+      myImg.classList.add('js-hidden');
+    });
+    // Questão 5 => item c:
+    // Cria o botão e configura para remover a imagem
+    const removeBtn = document.createElement('span');
+    removeBtn.classList.add('remove-btn');
+    removeBtn.textContent = 'Remover Imagem';
+    document.body.appendChild(removeBtn);
+    // Configura o botão para remover a imagem
+    function removeImage() {
+      myImg.remove();
+      removeBtn.removeEventListener('click', removeImage);
+      //document.body.removeChild(removeBtn);
+    }
+    removeBtn.addEventListener('click', removeImage);
+  </script>
+</body>
+
+</html>

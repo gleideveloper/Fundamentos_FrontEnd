@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Gleides Vinente">
+  <title>Questão 2: Javascript + DOM</title>
+
+<body>
+  <h1>
+    WEB ACADEMY
+  </h1>
+  <div id="container">
+    <div class="content">
+      Introdução ao DOM (document object model)
+    </div>
+  </div>
+
+  <script>
+    // Selecionar o container pelo id
+    const container = document.getElementById("container");
+
+    // Criar um elemento <p> com texto vermelho
+    const p = document.createElement("p");
+    p.style.color = "red";
+    p.innerText = "Hierarquia de Objetos";
+
+    // Criar um elemento <h3> com texto azul
+    const h3 = document.createElement("h3");
+    h3.style.color = "blue";
+    h3.innerText = "Windows Object";
+
+    // Criar uma <div> com borda, cor de fundo e adicionar filhos
+    const div = document.createElement("div");
+    div.style.border = "2px solid black";
+    div.style.background = "pink";
+
+    const h1 = document.createElement("h1");
+    h1.innerText = "Título da DIV";
+
+    const p2 = document.createElement("p");
+    p2.innerText = "Parágrafo da DIV";
+
+    // Adicionar os elementos criados ao container
+    div.appendChild(h1);
+    div.appendChild(p2);
+
+    container.appendChild(p);
+    container.appendChild(h3);
+    container.appendChild(div);
+
+  </script>
+</body>
+
+</html>
