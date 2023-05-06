@@ -15,7 +15,7 @@
 
 <body>
   <div class="container">
-    <h1 class="display-4">Meu Perfil Profissional</h1>
+    <p class="h1">Meu Perfil Profissional</p>
     <section style="margin: 30px 0 20px 0;">
       <div style="display: flex">
         <img width="200"
@@ -25,14 +25,11 @@
           <p class="h2">Resumo Profissional</p>
           <p style="text-align: justify;margin-top: 20px;">
             Trabalho com desenvolvimento de Software há mais de 10 anos, atuando na áreas Android Embarcado, Android
-            Apps
-            e Web.
-            Meu principal objetivo é atuar como Tech Lead/Especialista de desenvolvimento Mobile com
-            Android(Kotlin|Java|C) ou Web com SpringBoot.
-            Atualmente concluir o curso de especialização em Android Embarcado pela UFAM (DevTitinas/Icomp),
+            Apps e Web. Meu principal objetivo é atuar como Tech Lead/Especialista de desenvolvimento Mobile com
+            Android(Kotlin|Java|C) ou Web com SpringBoot. Atualmente concluir o curso de especialização em Android
+            Embarcado pela UFAM (DevTitinas/Icomp),
             que tem como objetivo a formação de recursos humanos de alta qualidade com conhecimentos técnicos avançados
-            e
-            especializados na criação, personalização e manutenção da plataforma Android em dispositivos embarcados.
+            e especializados na criação, personalização e manutenção da plataforma Android em dispositivos embarcados.
           </p>
         </div>
 
@@ -40,35 +37,55 @@
     </section>
     <hr>
     <section>
-      <p class="h2">Experiência Profissional</p>
-      <ul class="list-group">
-        <li class="list-group-item active">
-          <p class=" h3">Avanade (fev/2022 ~ Atual)</p>
-          <p style="text-align: justify">
-            Atualmente estou atuando como BackEnd Sênior Java, trabalhando com Springboot criando Microserviços, usando
-            as
-            tecnologias DevOps Azure, Docker, Kafka e Kubernets, MongoDb, Postgress e Orcale. Me considero desenvolvedor
-            FullStack Mobile.
-          </p>
-        </li>
-        <li class="list-group-item">
-          <p class=" h3">Instituto SIDIA (mar/2014 ~ jan/2022)</p>
-          <p style="text-align: justify">
-            Atuei como Dev Android por 2 anos na camada de Applications no Projeto CarMode, e 6 anos como Dev Android
-            Embarcado Sênior na camada de Framework, aplicando os requisitos todas as operadoras da America Latina no
-            time
-            de Requirement, automatizando testes para validar esses requisitos, e customizando o Android AOSP.
-          </p>
-        </li>
-        <li class="list-group-item">
-          <p class=" h3">LG Electronics (fev/2006 ~ mar/2014)</p>
-          <p style="text-align: justify">
-            Atuei como Analista de Projetos durante 8 anos na Engenharia de Projetos, automatizando tarefas em Excel
-            usando VBA e banco de dados Access, analisando e classificando a Bill off Material do produto conforme sua
-            NCM (Nomeclatura Comum do Mercosul).
-          </p>
-        </li>
-      </ul>
+      <div class="accordion" id="accordionExample">
+        <p class="h2">Experiência Profissional</p>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Avanade #1 (Fev/2022 ~ Atual)
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Atualmente estou atuando como BackEnd Sênior Java,</strong>
+              trabalhando com Springboot criando Microserviços, usando as tecnologias DevOps Azure, Docker, Kafka e
+              Kubernets, MongoDb, Postgress e Orcale.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Instituto SIDIA #2 (mar/2014 ~ jan/2022)
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Atuei como Dev Android</strong> por 2 anos na camada de Applications no Projeto CarMode, e 6 anos
+              como <strong>Dev Android Embarcado Sênior</strong> na camada de Framework, aplicando os requisitos todas
+              as operadoras da America Latina no time de Requirement, automatizando testes para validar esses
+              requisitos, e customizando o Android AOSP.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              LG Electronics #3 (fev/2006 ~ mar/2014)
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Atuei como Analista de Projetos</strong> durante 8 anos na Engenharia de Projetos, automatizando
+              tarefas em Excel usando VBA e banco de dados Access, analisando e classificando a Bill off Material do
+              produto conforme sua NCM (Nomeclatura Comum do Mercosul).
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <hr>
     <section>
@@ -138,7 +155,7 @@
     </section>
     <hr>
     <section>
-      <h2>Formação Acadêmica</h2>
+      <p class="h2">Formação Acadêmica</p>
       <ul class="list-group">
         <li class="list-group-item active">
           <h3>We Academy IComp/UFAM</h3>
@@ -167,17 +184,15 @@
     </section>
     <hr>
     <section>
-      <p class="h2">Contatos Profissional</p>
+      <p class="h3">Contatos Profissional</p>
       <i class="bi bi-card-list"></i>
       <a href="./cv_form_contato.html">
         Clique aqui e preencha o formulário se quiser entrar em contato
       </a>
       <br><br>
-      <p class="h2">Redes Sociais</p>
+      <p class="h3">Redes Sociais</p>
       <i class="bi bi-github"></i>
-      <a href="https://github.com/gleideveloper">
-        gleideveloper
-      </a>
+      <a href="https://github.com/gleideveloper">gleideveloper</a>
       <br>
       <i class="bi bi-linkedin"></i>
       <a href="https://www.linkedin.com/in/gleides-vinente/">in/gleides-vinente</a>
